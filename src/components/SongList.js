@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { selectSong } from '../actions'
 
+
 const mapStateToProps = (state) => {
+  console.log(state)
   return { songs: state.songs };
 }
 
@@ -15,7 +17,7 @@ class SongList extends Component {
             <button 
               type="button" 
               className="ui button primary"
-              onClick={this.props.selectSong(song)}
+              onClick={() => this.props.selectSong(song)}
             >
               Select
             </button>
